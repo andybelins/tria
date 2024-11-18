@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stray Kids Memory Unlock</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      color: #ffffff;
+      background: url('https://i.imgur.com/ahIVDog.png') no-repeat center center fixed;
+      background-size: cover; /* Ensures the image covers the entire screen */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      position: relative;
+      animation: fadeIn 2s;
+      background: rgba(0, 0, 0, 0.5); /* Adds a semi-transparent overlay to make text readable */
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .text {
+      font-size: 1.5rem;
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+    }
+
+    .final-text {
+      font-size: 1.2rem;
+      color: #ffc107;
+      margin-top: 30px;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+    }
+
+    .final-text:hover {
+      text-shadow: 0 0 10px #ffc107;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="message1" class="text">Somewhere deep within the echoes of your heart...</div>
+    <div id="message2" class="text" style="margin-top: 20px;">Your Stray Kids concert memories are waiting to be unlocked.</div>
+    <div id="final-text" class="final-text">Tap here to step back in time.</div>
+  </div>
+
+  <script>
+    // Animation timings
+    const timings = {
+      message1: 0, // Show immediately
+      message2: 3000, // Show after 3 seconds
+      finalText: 6000, // Show after 6 seconds
+    };
+
+    // Elements
+    const message1 = document.getElementById('message1');
+    const message2 = document.getElementById('message2');
+    const finalText = document.getElementById('final-text');
+
+    // Show elements sequentially
+    setTimeout(() => {
+      message1.style.opacity = 1;
+    }, timings.message1);
+
+    setTimeout(() => {
+      message2.style.opacity = 1;
+    }, timings.message2);
+
+    setTimeout(() => {
+      finalText.style.opacity = 1;
+    }, timings.finalText);
+
+    // Redirect on tap
+    finalText.addEventListener('click', () => {
+      window.location.href = 'https://open.spotify.com/playlist/YOUR_SPOTIFY_LINK';
+    });
+  </script>
+</body>
+</html>
